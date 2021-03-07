@@ -3,7 +3,7 @@
 - [Doc](https://www.scala-lang.org/)
 
 ## Practice
-- [Hello World](./hello-world)
+- [Hello World](https://github.com/ZoeLiao/Scala-practice/tree/main/hellow-world)
 
 ## The Scala REPL 
 The Scala REPL (“Read-Evaluate-Print-Loop”) is a command-line interpreter that you use as a “playground” area to test your Scala code.
@@ -21,27 +21,31 @@ val p = new Person("Amy")
 
 ## Control Structures
 - if/else
-    - 1.```scala
-    if (a) {
-      doA()
-    } else if (b){
-      doB()
-    } else {
-      doC()
-    }
-    ```
-    - 2.```scala
-    val x = if (a < b) a else b 
-    ```
+    - 1.
+        ```scala
+        if (a) {
+          doA()
+        } else if (b){
+          doB()
+        } else {
+          doC()
+        }
+        ```
+    - 2.
+        ```scala
+        val x = if (a < b) a else b 
+        ```
 - match
-    - 1. ```scala
+    - 1. 
+        ```scala
         var result = i match {
             case 1 => "one"
             case 2 => "two"
             case _ => "not 1 or 2"
         }
         ```
-    - 2. ```scala
+    - 2. 
+        ```scala
         def getClassAsString(x: Any):String = x match {
             case s: String => s + " is a String"
             case i: Int => "Int"
@@ -61,23 +65,25 @@ val p = new Person("Amy")
     }
     ```
 - for loops and expressions
-    - 1.```scala
+    - 1.
+        ```scala
         for (arg <- args) println(arg)
         for (i <- 0 to 5) println(i)
         for (i <- 0 to 10 by 2) println(i)
         ```
     - 2. with `yield`
-    ```scala
-    val x = for (i <- i to 5) yield i * 2
+        ```scala
+        val x = for (i <- i to 5) yield i * 2
+        ```
     - 3.
-    ```scala
-    val fruit = List("apple", "banana", "lime", "orange")
-    
-    val fruitLengths = for {
-        f <- fruits
-        if f.length > 4
-    } yield f.length
-    ```
+        ```scala
+        val fruit = List("apple", "banana", "lime", "orange")
+        
+        val fruitLengths = for {
+            f <- fruits
+            if f.length > 4
+        } yield f.length
+        ```
 - while and do/while
     ```scala
     // while loop
