@@ -99,3 +99,53 @@ val p = new Person("Amy")
     }
     while(condition)
     ```
+
+## Classes
+- No get, set method 
+- Support to set default
+- No need to assign return type 
+- Example:
+    ```scala
+    class Pizza (
+      var crustSize: CrustSize,
+      var crustType: CrustType,
+      var toppings: ArrayBuffer[Topping],
+    ) {
+      def addTopping(t: Topping): Unit = toppings += t
+      def removeTopping(t: Topping): Unit = toppings -= t
+      def removeAllTopping(t: Topping): Unit = toppings.clear()
+    }
+    ```
+
+## Traits
+- Let you break your code down into small, modular units 
+- 單一繼承
+- 不能有類的參數
+- Example:
+    ```scala
+    trait Speaker {
+      def speak(): String
+    }
+
+    trait TrailWagger {
+      def startTail(): Unit = println("tail is wagging")
+      def stopTail(): Unit = println("tail is stopped")
+    }
+
+    trait Runner {
+      def startRunning(): Unit = println("I'm running")
+      def stopRunning(): Unit = println("Stopped running")
+    }
+
+    // 繼承
+    class Dog(name: String) extends Speaker with TailWagger with Runner {
+      def speak(): String = "Woof!"
+    }
+
+    // 繼承多個 Trait
+    class Cat extends Speaker with TailWagger with Runner {
+      def speak(): String = "Meow"
+      override def startRunning(): Unit = println("Yeah ... I don’t run")
+      override def stopRunning(): Unit = println("No need to stop")
+    }
+    ```
